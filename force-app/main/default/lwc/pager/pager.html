@@ -1,0 +1,45 @@
+<template>
+    <section>
+        <div class="page-data-container">
+            <h1
+                class="slds-text-heading_large slds-align_absolute-center slds-m-top_small"
+            >
+                {title}
+            </h1>
+            <slot></slot>
+        </div>
+        <div class="slds-align_absolute-center page-data-container">
+            <lightning-button-icon
+                alternative-text="Previous"
+                class="slds-float_left"
+                icon-class="slds-m-around_medium"
+                icon-name="utility:chevronleft"
+                onclick={handlePrevious}
+                variant="bare"
+            >
+            </lightning-button-icon>
+            <template
+                for:each={currentVisiblePageRanges}
+                for:item="currentlyVisible"
+            >
+                <button
+                    class="page-index slds-m-around_x-small"
+                    key={currentlyVisible}
+                    onclick={handleClick}
+                    title={currentlyVisible}
+                >
+                    {currentlyVisible}
+                </button>
+            </template>
+            <lightning-button-icon
+                alternative-text="Next"
+                class="slds-float_right"
+                icon-class="slds-m-around_medium"
+                icon-name="utility:chevronright"
+                onclick={handleNext}
+                variant="bare"
+            >
+            </lightning-button-icon>
+        </div>
+    </section>
+</template>

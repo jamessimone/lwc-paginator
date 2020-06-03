@@ -1,0 +1,21 @@
+:host {
+    --white: rgb(255, 255, 255);
+    --active: #f5edcc;
+}
+
+.page-data-container {
+    background-color: var(--white);
+    max-height: 400px;
+    overflow: hidden;
+}
+
+button {
+    background-color: var(--white);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 5px 10px;
+}
+
+.active {
+    background-color: var(--active);
+}

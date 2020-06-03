@@ -1,0 +1,21 @@
+<template>
+    <template if:true={faqs.data}>
+        <c-pager
+            class="pager"
+            pagedata={faqs.data}
+            title="FAQ"
+            onpagerchanged={handlePagerChanged}
+        >
+            <template for:each={currentlyVisible} for:item="faq">
+                <lightning-accordion allow-multiple-sections-open key={faq.key}>
+                    <lightning-accordion-section
+                        name={faq.key}
+                        label={faq.question}
+                    >
+                        <small>{faq.answer}</small>
+                    </lightning-accordion-section>
+                </lightning-accordion>
+            </template>
+        </c-pager>
+    </template>
+</template>
